@@ -1,7 +1,7 @@
 {
   "main.css": "/music-store/static/css/main.6be7aaed.chunk.css",
-  "main.js": "/music-store/static/js/main.870b03c7.chunk.js",
-  "main.js.map": "/music-store/static/js/main.870b03c7.chunk.js.map",
+  "main.js": "/music-store/static/js/main.ad34178e.chunk.js",
+  "main.js.map": "/music-store/static/js/main.ad34178e.chunk.js.map",
   "static/js/1.33736d30.chunk.js": "/music-store/static/js/1.33736d30.chunk.js",
   "static/js/1.33736d30.chunk.js.map": "/music-store/static/js/1.33736d30.chunk.js.map",
   "runtime~main.js": "/music-store/static/js/runtime~main.8488dd54.js",
@@ -10,6 +10,6 @@
   "static/media/malte-wingen-381988-unsplash.jpg": "/music-store/static/media/malte-wingen-381988-unsplash.331197b5.jpg",
   "static/media/index.css": "/music-store/static/media/anthony-delanoix-15928-unsplash2.a21982e6.jpg",
   "index.html": "/music-store/index.html",
-  "precache-manifest.24b15e526e27b538c34ad09977b7e018.js": "/music-store/precache-manifest.24b15e526e27b538c34ad09977b7e018.js",
+  "precache-manifest.65652d3b69795a536c4af7ad12cbdd9d.js": "/music-store/precache-manifest.65652d3b69795a536c4af7ad12cbdd9d.js",
   "service-worker.js": "/music-store/service-worker.js"
 }
