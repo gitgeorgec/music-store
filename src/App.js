@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Switcher from './Switcher';
-import Header from './header'
+import Switcher from './container/Switcher';
+import Header from './container/header'
 
 class App extends Component {
   render() {
