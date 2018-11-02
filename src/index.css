@@ -8,7 +8,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+/* 
+blue   #5BC0EB
+yellow #FDE74C
+green  #9BC53D
+red    #C3423F
+black  #404E4D 
+*/
+
+.Head{
+  background: #5BC0EB
+}
+
+.jumbo_back {
+  background: url("./img/anthony-delanoix-15928-unsplash2.jpg");
+  background-position: center;
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-color: #000000;
+}
+
+@media screen and (max-width:860px){
+  .jumbo_back {
+    background-size: 150%;
+  }
+}
+@media screen and (max-width:640px){
+  .jumbo_back {
+    background-position: -120px;
+    background-size: 280%;
+  }
 }
