@@ -3,6 +3,9 @@ import {NavLink} from 'react-router-dom';
 
 
 class Dropdown extends Component {
+    hover(){
+
+    }
     render() {
       return (
         <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -12,14 +15,17 @@ class Dropdown extends Component {
                 Dropdown
                 </span>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <NavLink className="dropdown-item" to="/">Action</NavLink>
-                <NavLink className="dropdown-item" to="/">Another action</NavLink>
+                <NavLink exact className="dropdown-item" to="/Action">Action</NavLink>
+                <NavLink exact className="dropdown-item" to="/Another">Another action</NavLink>
                 <div className="dropdown-divider"></div>
-                <NavLink className="dropdown-item" to="/">Something else here</NavLink>
+                <NavLink exact className="dropdown-item" to="/Something">Something else here</NavLink>
                 </div>
             </li>
             <li className="nav-item">
                 <NavLink exact className="nav-link" to="/">Home</NavLink>
+            </li>
+            <li className="nav-item">
+                <NavLink exact className="nav-link" to="/landing">landing</NavLink>
             </li>
             <li className="nav-item">
                 <NavLink exact className="nav-link" to="/about">About</NavLink>
