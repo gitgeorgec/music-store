@@ -25,7 +25,7 @@ class Dropdown extends Component {
                 <NavLink exact className="nav-link" to="/">Home</NavLink>
             </li>
             <li className="nav-item">
-                <NavLink exact className="nav-link" to="/landing">landing</NavLink>
+                <NavLink exact className="nav-link" to="/Search">Search</NavLink>
             </li>
             <li className="nav-item">
                 <NavLink exact className="nav-link" to="/about">About</NavLink>

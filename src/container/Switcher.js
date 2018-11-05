@@ -1,24 +1,24 @@
 import React from 'react';
-import Jumbotron from './jumbotoon'
 import Main from './main'
 import About from './about'
+import Search from './search'
 import {Switch, Route} from 'react-router-dom';
 
-const Homepage = () => (
-  <Jumbotron/>
+const HomePage = () => (
+  <Main/>
 );
-const Aboutpage = () => (
+const AboutPage = () => (
   <About />
 )
-const Landing = ()=>(
-  <Main />
+const SearchPage = ()=>(
+  <Search />
 )
 
 const Switcher = () => (
   <Switch>
-    <Route exact path="/" component={Homepage}/>
-    <Route exact path="/about" component={Aboutpage}/>
-    <Route exact path="/landing" component={Landing}/>
+    <Route exact path="/" component={HomePage}/>
+    <Route exact path="/about" component={AboutPage}/>
+    <Route exact path="/Search" component={SearchPage}/>
   </Switch>
 );
 

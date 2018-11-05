@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HeadphoneImg from '../img/malte-wingen-381988-unsplash.jpg'
 import MusicCard from  '../components/musicCard'
+import Jumbotron from './jumbotoon'
 
 class Main extends Component {
     
@@ -20,7 +21,9 @@ class Main extends Component {
 
     render() {
       return (
+
         <main>
+            <Jumbotron />
             <div style={this.marginLarge}>
                 <div className="container" style={this.backyellow}>
                     <div className="row text-align-center">
@@ -52,10 +55,10 @@ class Main extends Component {
                         <MusicCard title="hello" img={HeadphoneImg}/>
                     </div>
                     <div className="col-md-4 col-sm-12 lead">
-                        <MusicCard title="HI"img={HeadphoneImg}/>
+                        <MusicCard title="HI" img={HeadphoneImg}/>
                     </div>
                     <div className="col-md-4 col-sm-12 lead">
-                        <MusicCard title="Music"img={HeadphoneImg}/>
+                        <MusicCard title="Music" img={HeadphoneImg}/>
                     </div>
 
                 </div>
