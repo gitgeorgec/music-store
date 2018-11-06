@@ -1,15 +1,16 @@
 {
-  "main.css": "/music-store/static/css/main.6be7aaed.chunk.css",
-  "main.js": "/music-store/static/js/main.ad34178e.chunk.js",
-  "main.js.map": "/music-store/static/js/main.ad34178e.chunk.js.map",
-  "static/js/1.33736d30.chunk.js": "/music-store/static/js/1.33736d30.chunk.js",
-  "static/js/1.33736d30.chunk.js.map": "/music-store/static/js/1.33736d30.chunk.js.map",
+  "main.css": "/music-store/static/css/main.b34cc975.chunk.css",
+  "main.js": "/music-store/static/js/main.3a3f7a89.chunk.js",
+  "main.js.map": "/music-store/static/js/main.3a3f7a89.chunk.js.map",
+  "static/js/1.e92c8275.chunk.js": "/music-store/static/js/1.e92c8275.chunk.js",
+  "static/js/1.e92c8275.chunk.js.map": "/music-store/static/js/1.e92c8275.chunk.js.map",
   "runtime~main.js": "/music-store/static/js/runtime~main.8488dd54.js",
   "runtime~main.js.map": "/music-store/static/js/runtime~main.8488dd54.js.map",
-  "static/css/main.6be7aaed.chunk.css.map": "/music-store/static/css/main.6be7aaed.chunk.css.map",
+  "static/css/main.b34cc975.chunk.css.map": "/music-store/static/css/main.b34cc975.chunk.css.map",
   "static/media/malte-wingen-381988-unsplash.jpg": "/music-store/static/media/malte-wingen-381988-unsplash.331197b5.jpg",
   "static/media/index.css": "/music-store/static/media/anthony-delanoix-15928-unsplash2.a21982e6.jpg",
+  "static/media/Spotify_Logo_RGB_Green.png": "/music-store/static/media/Spotify_Logo_RGB_Green.11dc437a.png",
   "index.html": "/music-store/index.html",
-  "precache-manifest.65652d3b69795a536c4af7ad12cbdd9d.js": "/music-store/precache-manifest.65652d3b69795a536c4af7ad12cbdd9d.js",
+  "precache-manifest.42acc20df9d10da5f440650d4c84db13.js": "/music-store/precache-manifest.42acc20df9d10da5f440650d4c84db13.js",
   "service-worker.js": "/music-store/service-worker.js"
 }
