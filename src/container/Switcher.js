@@ -1,24 +1,22 @@
 import React from 'react';
-import Main from './main'
+import Index from './index'
 import About from './about'
 import Search from './search'
+import Register from './register';
 import {Switch, Route} from 'react-router-dom';
 
-const HomePage = () => (
-  <Main/>
-);
-const AboutPage = () => (
-  <About />
-)
-const SearchPage = ()=>(
-  <Search />
-)
+const IndexPage = () => (<Index/>)
+const AboutPage = () => (<About />)
+const SearchPage = ()=>(<Search />)
+const RegisterPage = ()=>(<Register />)
 
 const Switcher = () => (
   <Switch>
-    <Route exact path="/" component={HomePage}/>
+    <Route exact path="/" component={IndexPage}/>
     <Route exact path="/about" component={AboutPage}/>
-    <Route exact path="/Search" component={SearchPage}/>
+    <Route exact path="/search" component={SearchPage}/>
+    <Route exact path="/register" component={RegisterPage}/>
+    <Route exact path="/login" component={RegisterPage}/>
   </Switch>
 );
 
