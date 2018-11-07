@@ -13,6 +13,7 @@ class Search extends Component{
     constructor(props){
         super(props)
         this.state = {
+            genreResults:[],
             searchResults:[],
             next:"https://api.spotify.com/v1/browse/new-releases?country=TW&limit=20",
             searchType:"album",
