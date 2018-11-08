@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Signup from '../components/signupForm'
-import Login from '../components/loginForm'
+import Login from '../components/authForm'
 
 const signupForm=()=>(<Signup/>)
 const loginForm=()=>(<Login/>)

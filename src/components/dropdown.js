@@ -20,10 +20,10 @@ class Dropdown extends Component {
                 <NavLink exact className="nav-link" to="/about">About</NavLink>
             </li>
             <li className="nav-item">
-                <NavLink exact className="nav-link" to="/register">Login</NavLink>
+                <NavLink exact className="nav-link" to="/login">Login</NavLink>
             </li>
             <li className="nav-item">
-                <NavLink exact className="nav-link" to="/login">signup</NavLink>
+                <NavLink exact className="nav-link" to="/register">signup</NavLink>
             </li>
             </ul>
         </div>

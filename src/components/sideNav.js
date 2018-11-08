@@ -52,7 +52,7 @@ class SideNav extends Component{
     render(){
         return (
             <div className="col-md-2" style={this.backred}>
-            <p></p>
+            <p>Recommendations</p>
                 <ul className="list-group list-group-flush">
                     {this.state.genres.map((item,i)=>{
                         return(
