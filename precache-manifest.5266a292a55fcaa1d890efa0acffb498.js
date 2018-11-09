@@ -16,19 +16,19 @@ self.__precacheManifest = [
     "url": "/music-store/static/js/runtime~main.8488dd54.js"
   },
   {
-    "revision": "3a3f7a89ac2658371bd4",
-    "url": "/music-store/static/js/main.3a3f7a89.chunk.js"
+    "revision": "417c669f7819d939eb79",
+    "url": "/music-store/static/js/main.417c669f.chunk.js"
   },
   {
-    "revision": "e92c82753378606e1171",
-    "url": "/music-store/static/js/1.e92c8275.chunk.js"
+    "revision": "b04b010211618ee9af5c",
+    "url": "/music-store/static/js/1.b04b0102.chunk.js"
   },
   {
-    "revision": "3a3f7a89ac2658371bd4",
-    "url": "/music-store/static/css/main.b34cc975.chunk.css"
+    "revision": "417c669f7819d939eb79",
+    "url": "/music-store/static/css/main.2d475d52.chunk.css"
   },
   {
-    "revision": "0822c71c04ce42621770026840cbaf19",
+    "revision": "6d6685c63234490fe2d9e9e9e988592f",
     "url": "/music-store/index.html"
   }
 ];
