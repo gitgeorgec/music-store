@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import * as apiCalls from "../api/api"
+import { Redirect } from 'react-router-dom'
 
 class AuthForm extends Component{
     constructor(props){
@@ -7,32 +8,29 @@ class AuthForm extends Component{
         this.state = {
             email:"",
             username:"",
-            password:""
+            password:"",
+            err:false
         }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handleSubmit = e =>{
+    async handleSubmit(e){
         e.preventDefault()
-        const path = this.props.signin?"signin":"signup"
+        const path = this.props.sign?"signin":"signup"
         const url = "http://localhost:8081/api/auth/"+path
         console.log(url)
-        fetch(url,{
-            method:"POST",
-            headers: {
-                'Content-Type': 'application/json'
-              },
-            body: JSON.stringify({
-            username:this.state.username, 
-            email:this.state.email,
-            password:this.state.password
-            })
-        })
-        .then(res=>res.json())
-        .then(res=>{
-            //set token
-            console.log(res)
+        const username=this.state.username 
+        const email=this.state.email
+        const password=this.state.password
+        const data = await apiCalls.getAuth(url,username,email,password)
+        if(data){
+            localStorage.setItem("jwtToken", data.token);
+            localStorage.setItem("id", data.id);
+            localStorage.setItem("username", data.username);
             this.props.history.push("/")
-        })
+        }else {
+            this.setState({err:true})
+        }
     }
 
     handleChange = e =>{
@@ -42,9 +40,12 @@ class AuthForm extends Component{
     }
 
     render(){
+        if (this.props.login) {
+            return <Redirect to='/'/>;
+        }else{
         return (
             <div className="container">
-            <h1>{this.props.heading}</h1>
+            <h1 className="text-center">{this.props.heading}</h1>
                 <form className="col-md-9 mx-auto col-sm-12 form-control-lg" onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="Email">Email address</label>
@@ -62,9 +63,11 @@ class AuthForm extends Component{
                     <div className="form-group">
                         <button type="submit" className="btn btn-primary">Submit</button>
                     </div>
+                    {this.state.err?<div>wrong user</div>:""}
                 </form>
             </div>
         )
+        }
     }
 }
 

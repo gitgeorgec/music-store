@@ -33,6 +33,7 @@ class Search extends Component{
     }
 
     handleSubmitSearch(searchKey,searchType){
+        if(searchKey==="")searchKey=" "
         this.setState({
             searchResults:[],
             next:`https://api.spotify.com/v1/search?query=${searchKey}&type=${searchType}&market=TW&offset=0&limit=20`
@@ -52,6 +53,7 @@ class Search extends Component{
         const searchURL = this.state.next
         let token = await apiCalls.getToken()
         let data = await apiCalls.getData(searchURL,token)
+        console.log(data)
         const Results = this.state.searchResults.splice("")
         if(data[this.state.searchType+"s"]&&data[this.state.searchType+"s"].items){
             this.setState({
@@ -81,9 +83,15 @@ class Search extends Component{
         return
     }
 
+    handleClick(){
+        if(this.props.add){
+            this.props.add()
+        }
+    }
     render(){
         return (
             <main>
+                <div onClick={this.handleClick.bind(this)}>click</div>
                 <div className="row mx-auto">
                 <SideNav onSubmit={this.handleGenreSearch.bind(this)} categories={this.state.Categories}/>
                 <div className="col-md-10 col-sm-12">
@@ -94,7 +102,7 @@ class Search extends Component{
                             {this.state.searchType!=="track"?this.state.searchResults.map((item,i)=>{
                                 return (
                                     <div className="col-md-3 col-sm-4 col-xs-10 mb-3" key={i}>
-                                        <MusicCard key={i} info={item} title={item.name} img={Boolean(item.images)&&Boolean(item.images[0])?item.images[0].url:HeadphoneImg}/>
+                                        <MusicCard key={i} info={item} title={item.name} img={Boolean(item.images)&&Boolean(item.images[0])?item.images[0].url:HeadphoneImg} {...this.props}/>
                                     </div>
                                     )
                                 })
@@ -103,7 +111,7 @@ class Search extends Component{
                                 this.state.searchResults.map((item,i)=>{
                                     return(
                                         <div className="col-md-3 col-sm-4 col-xs-10 mb-3" key={i}>
-                                            <MusicCard key={i} info={item} title={item.name} img={Boolean(item.album.images)&&Boolean(item.album.images[0])?item.album.images[0].url:HeadphoneImg}/>
+                                            <MusicCard key={i} info={item} title={item.name} img={Boolean(item.album.images)&&Boolean(item.album.images[0])?item.album.images[0].url:HeadphoneImg} {...this.props}/>
                                         </div>
                                         )})
                                 :""} 

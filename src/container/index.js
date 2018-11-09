@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import HeadphoneImg from '../img/malte-wingen-381988-unsplash.jpg'
 import MusicCard from  '../components/musicCard'
-import Jumbotron from './jumbotoon'
+import Jumbotron from '../components/jumbotoon'
 
 class Main extends Component {
     

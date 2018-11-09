@@ -16,29 +16,6 @@ class SideNav extends Component{
         "height":"100vh",
         "background":"#C3423F"
     }
-    // GetGenres(){
-    //     const url = 'https://secret-plateau-59047.herokuapp.com/access_token'
-    //     const CategoriesURL="https://api.spotify.com/v1/recommendations/available-genre-seeds"
-    //     fetch(url)
-    //     .then(res=>res.json())
-    //     .then(res=>{
-    //         fetch(CategoriesURL,{
-    //             method:'GET',
-    //             headers: new Headers({
-    //                 "Accept": "application/json",
-    //                 "Content-Type": "application/json",
-    //                 "Authorization": `Bearer ${res.access_token}`
-    //             })
-    //         })
-    //         .then(res=>res.json())
-    //         .then(res=>{
-    //             this.setState({
-    //                 genres:res.genres
-    //             })
-    //             console.log(this.state.genres)
-    //         })
-    //     })   
-    // }
 
     handleGenreChange(e){
         if(this.props.onSubmit){

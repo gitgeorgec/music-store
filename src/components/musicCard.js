@@ -8,7 +8,8 @@ class MusicCard extends Component{
 		  	title:props.title,
             img: props.img,
             info: props.info,
-            rate: "Good"
+            rate: "Good",
+            owned: "false"
         }
         this.handleClcik= this.handleClcik.bind(this)
     }
@@ -19,14 +20,22 @@ class MusicCard extends Component{
         this.setState({rate:word})
     }
     
+    handleShopping(){
+        if(this.props.addShopping){
+            this.props.addShopping(this.state.title)
+        }
+        console.log("click")
+        this.setState({owned: "true"})
+    }
+
     render(){
         return (
             <div className="card">
                 <img className="card-img-top" src={this.state.img} alt=""/>
                 <div className="card-body">
                 <h4>{this.state.title}</h4>
-                {/* <div>{this.state.info.artists[0].name}</div> */}
                 <div onClick={this.handleClcik}>{this.state.rate}</div>
+                <div onClick={this.handleShopping.bind(this)}>In my list {this.state.owned}</div>
                 </div>
             </div>
         )
