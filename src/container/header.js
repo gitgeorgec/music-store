@@ -12,7 +12,7 @@ class Header extends Component {
       return (
         <header className="Head">
             <nav className="navbar navbar-expand-lg navbar-light">
-                <NavLink className="navbar-brand" to="/">Music Store</NavLink>
+                <NavLink className="navbar-brand" to="/">Music Store {this.props.count}</NavLink>
                 {localStorage.username?<span onClick={this.handleClick.bind(this)}>Hello {localStorage.username}</span>:""}
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                     <span className="navbar-toggler-icon"></span>

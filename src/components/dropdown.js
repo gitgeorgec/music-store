@@ -9,7 +9,7 @@ class Dropdown extends Component {
             email:"",
         }
     }
-    handleClick(){
+    handleClick=()=>{
         if(this.props.add){
             this.props.add()
         }
@@ -23,7 +23,7 @@ class Dropdown extends Component {
     render() {
       return (
         <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul className="navbar-nav col-3">
+            <ul className="navbar-nav">
             <li className="nav-item">
                 <NavLink exact className="nav-link" to="/">Home</NavLink>
             </li>
@@ -33,22 +33,30 @@ class Dropdown extends Component {
             <li className="nav-item">
                 <NavLink exact className="nav-link" to="/about">About</NavLink>
             </li>
+            <li className="nav-item">
+                <NavLink exact className="nav-link" to="/shoppingCart">shopping cart</NavLink>
+            </li>
             {this.props.login? (
+                    <React.Fragment>
                         <li className="nav-item">
-                            <Link exact className="nav-link" to="/" onClick={this.handleLogout.bind(this)}>Log Out</Link>
+                            <Link className="nav-link" to="/" onClick={this.handleLogout.bind(this)}>Log Out</Link>
                         </li>
-					):(
-                        <React.Fragment>
+                        <li className="nav-item">
+                            <NavLink exact className="nav-link" to="/user">User</NavLink>
+                        </li>
+                    </React.Fragment>
+				):(
+                    <React.Fragment>
                         <li className="nav-item">
                             <NavLink exact className="nav-link" to="/login">Login</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink exact className="nav-link" to="/register">signup</NavLink>
                         </li>
-                        </React.Fragment>
+                    </React.Fragment>
 					)}
             </ul>
-            <span onClick={this.handleClick.bind(this)}>click</span>
+
         </div>
       )
     }

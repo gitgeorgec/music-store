@@ -25,6 +25,13 @@ class SearchBar extends Component {
         })
     }
 
+    handleEnterPress=(e)=>{
+        if(e.key==="Enter"){
+            console.log("enter")
+            this.handleSearch()
+        }
+    }
+
     render() {
       return (
         <div className="input-group mb-3">
@@ -36,7 +43,8 @@ class SearchBar extends Component {
             </select>
             <input type="text" className="form-control" placeholder="search..." 
                 value={this.state.searchValue}
-                onChange = {this.handleSearchValueChange.bind(this)} />
+                onChange = {this.handleSearchValueChange.bind(this)} 
+                onKeyPress ={this.handleEnterPress}/>
             <div className="input-group-append">
                 <span onClick={this.handleSearch.bind(this)} className="input-group-text btn btn-success">Search</span>
             </div>

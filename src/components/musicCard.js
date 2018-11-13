@@ -1,41 +1,42 @@
 import React, { Component } from 'react';
-
+import HeadphoneImg from '../img/malte-wingen-381988-unsplash.jpg'
 
 class MusicCard extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
-		  	title:props.title,
-            img: props.img,
-            info: props.info,
-            rate: "Good",
-            owned: "false"
+            owned: this.props.shoppingCart[this.props.info.id]?"true": "false"
         }
-        this.handleClcik= this.handleClcik.bind(this)
     }
     
-    handleClcik(){
-        let word 
-        this.state.rate==="Good" ?word="bad":word="Good"
-        this.setState({rate:word})
-    }
-    
-    handleShopping(){
+    async handleAddShopping(){
         if(this.props.addShopping){
-            this.props.addShopping(this.state.title)
+            await this.props.addShopping(this.props.info,this.props.price,this.props.img)
+            this.setState({owned: this.props.shoppingCart[this.props.info.id]?"true": "false"})
         }
-        console.log("click")
-        this.setState({owned: "true"})
+    }
+
+    async handleRemoveShopping(){
+        if(this.props.removeShopping){
+            await this.props.removeShopping(this.props.info)
+            this.setState({owned: this.props.shoppingCart[this.props.info.id]?"true": "false"})
+        }
     }
 
     render(){
         return (
             <div className="card">
-                <img className="card-img-top" src={this.state.img} alt=""/>
+                <img className="card-img-top" src={this.props.img||HeadphoneImg} alt=""/>
                 <div className="card-body">
-                <h4>{this.state.title}</h4>
-                <div onClick={this.handleClcik}>{this.state.rate}</div>
-                <div onClick={this.handleShopping.bind(this)}>In my list {this.state.owned}</div>
+                <h4>{this.props.info.name}</h4>
+                {this.props.price?
+                    <div>Price ${this.props.price} 
+                    <span onClick={this.handleAddShopping.bind(this)}>+</span>
+                    <span onClick={this.handleRemoveShopping.bind(this)}>-</span>
+                    <div>{this.props.info.artists[0].name}</div>
+                    <div>In my cart {this.state.owned}</div>
+                    </div>
+                :""}
                 </div>
             </div>
         )

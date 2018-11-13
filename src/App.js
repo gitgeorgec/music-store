@@ -2,17 +2,35 @@ import React, { Component } from 'react';
 import Main from './container/Main';
 import Header from './container/header'
 import * as apiCalls from "./api/api"
+// import { setCookie, getCookie }from "./function/cookie"
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state={
-        buyChart:[],
+        shoppingCart:{},
         count:0,
         login:false,
-        logout:this.logout.bind(this),
+        logout:this.logout,
         add:this.addcount.bind(this),
+        total:0,
         addShopping:this.addShopping.bind(this),
+        removeShopping:this.removeShopping.bind(this),
+        removeAllShopping: this.removeAllShopping.bind(this)
+    }
+  }
+
+  componentWillMount(){
+    if(localStorage.getItem('cart')){
+      let shoppingCart = JSON.parse(localStorage.getItem('cart'))
+      let total = 0
+      for(let key in shoppingCart){
+        total = total + shoppingCart[key].price * shoppingCart[key].qty
+      }
+      this.setState({
+        shoppingCart:shoppingCart,
+        total:total
+      })
     }
   }
 
@@ -32,42 +50,71 @@ class App extends Component {
       console.log("have token")
       const isLogin = await apiCalls.checkAuth(localStorage.id, localStorage.jwtToken)
       if(isLogin){
-        (!this.state.login)?this.setState({login:true}):console.log("auth user")
+        (!this.state.login)?this.setState({login:true}):console.log("auth user "+localStorage.username)
       }else{
-        localStorage.clear()
-        console.log("not auth")
+        localStorage.removeItem("jwtToken")
+        localStorage.removeItem("id");
+        localStorage.removeItem("username");
       }
+    }else{
+      console.log("not auth")
     }
   }
 
-  logout(){
-    localStorage.clear()
+  logout=()=>{
+    localStorage.removeItem("jwtToken")
+    localStorage.removeItem("id");
+    localStorage.removeItem("username");
     this.setState({login:false})
   }
 
   addcount(s=1){
-    let c= this.state.count
-    c = c + s
-    this.setState({count:c})
+    this.setState((prevState,props)=>({count:prevState.count+s}))
   }
 
-  addShopping(item){
-    let buyChart= [...this.state.buyChart]
-    console.log(buyChart)
-    if(buyChart.includes(item)){
-      console.log("include")
+  addShopping(item,price,img){
+    let NewCart = JSON.parse(JSON.stringify(this.state.shoppingCart));
+    let totalPrice = this.state.total
+    if(!NewCart[item.id]){
+      NewCart[item.id]={item, qty:1, price, img}
+      localStorage.setItem("cart",JSON.stringify(NewCart))
     }else{
-      buyChart =[...buyChart, item]
-      this.setState({buyChart})
+      NewCart[item.id].qty++
+      NewCart[item.id].price = price
+      localStorage.setItem("cart",JSON.stringify(NewCart))
     }
-    console.log(buyChart)
+    totalPrice += price
+    this.setState({shoppingCart:NewCart, total:totalPrice})
   }
-  
+
+  removeShopping(item){
+    let NewCart = JSON.parse(JSON.stringify(this.state.shoppingCart));
+    let totalPrice = this.state.total
+    if(NewCart[item.id]){
+      const price = NewCart[item.id].price
+      if(NewCart[item.id].qty===1){
+        delete NewCart[item.id]
+      }else{
+        NewCart[item.id].qty--
+      }
+      totalPrice-price>0?totalPrice=totalPrice-price:totalPrice=0
+    }
+    localStorage.setItem("cart",JSON.stringify(NewCart))
+    this.setState({shoppingCart:NewCart, total:totalPrice})
+  }
+
+  removeAllShopping(){
+    localStorage.removeItem("cart")
+    this.setState({
+      shoppingCart:{},
+      total:0,
+    })
+  }
+
   render() {
     return (
       <div>
-        <Header {...this.state} onlogOut={this.state.logout}/>
-        <div>{this.state.count}</div>
+        <Header {...this.state}/>
         <Main {...this.state}/>
       </div>
     );
