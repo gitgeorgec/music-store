@@ -34,14 +34,11 @@ class App extends Component {
     }
   }
 
-  async componentDidMount(){
-    console.log("componentDidMount")
+  componentDidMount(){
     this.authUser()
   }
 
-  async componentDidUpdate(){
-    console.log("componentDidUpadate")
-    //checkuser
+  componentDidUpdate(){
     this.authUser()
   }
 
