@@ -16,7 +16,8 @@ class App extends Component {
         total:0,
         addShopping:this.addShopping.bind(this),
         removeShopping:this.removeShopping.bind(this),
-        removeAllShopping: this.removeAllShopping.bind(this)
+        removeAllShopping: this.removeAllShopping.bind(this),
+        checkAuth:this.authUser.bind(this)
     }
   }
 
@@ -47,14 +48,18 @@ class App extends Component {
       console.log("have token")
       const isLogin = await apiCalls.checkAuth(localStorage.id, localStorage.jwtToken)
       if(isLogin){
-        (!this.state.login)?this.setState({login:true}):console.log("auth user "+localStorage.username)
+        (!this.state.login)?this.setState({login:true}):console.log("not Auth")
+        console.log("auth user "+localStorage.username)
+        return true
       }else{
         localStorage.removeItem("jwtToken")
         localStorage.removeItem("id");
         localStorage.removeItem("username");
+        return false
       }
     }else{
       console.log("not auth")
+      return false
     }
   }
 

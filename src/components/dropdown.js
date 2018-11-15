@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {NavLink, Link } from 'react-router-dom';
 
 
+
 class Dropdown extends Component {
     constructor(props){
         super(props)
@@ -9,6 +10,7 @@ class Dropdown extends Component {
             email:"",
         }
     }
+
     handleClick=()=>{
         if(this.props.add){
             this.props.add()
@@ -20,7 +22,9 @@ class Dropdown extends Component {
             this.props.logout()
         }
     }
+
     render() {
+
       return (
         <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul className="navbar-nav">
@@ -54,7 +58,7 @@ class Dropdown extends Component {
                             <NavLink exact className="nav-link" to="/register">signup</NavLink>
                         </li>
                     </React.Fragment>
-					)}
+                    )}
             </ul>
 
         </div>

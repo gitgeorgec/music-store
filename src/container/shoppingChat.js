@@ -34,9 +34,13 @@ class ShoppingCart extends Component{
     }
   }
 
+  handleCheckOut(){
+    this.props.history.push("/login")
+  }
+
   render(){
     return (
-    <div className="row">
+    <div className="row mx-auto">
       <UserNav />
         <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div className="chartjs-size-monitor">
@@ -48,15 +52,15 @@ class ShoppingCart extends Component{
           <div className="btn-toolbar mb-2 mb-md-0">
             <p className="mr-3">total price:{this.props.total}</p>
             <div className="btn-group mr-2">
-            <button className="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">check out</button>
+            {this.props.login?<button className="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">check out</button>:<button className="btn btn-sm btn-outline-primary" onClick={this.handleCheckOut.bind(this)} >check out</button>}
             <button onClick={this.handleCancel.bind(this)} className="btn btn-sm btn-outline-danger">remove all</button>
             </div>
           </div>
           </div>
           {this.ShoppingItems()}
-          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
+          <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog">
+            <div className="modal-dialog modal-dialog-centered" role="document">
+              <div className="modal-content">
                 <StripeProvider apiKey="pk_test_WtTS1S3oqOzys4iqVJtSpOaB">
                   <div className="example">
                     <Elements>

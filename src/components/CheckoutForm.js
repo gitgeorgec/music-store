@@ -7,59 +7,108 @@ class CheckoutForm extends Component {
     this.state = {
         name:"",
         email:"",
-
-        complete: false
+        address:"",
+        phoneNumber:"",
+        complete:""
     }
     this.submit = this.submit.bind(this);
+  }
+
+  handleChange = e =>{
+    //check email
+    if(e.target.name==="email"){
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(re.test(String(e.target.value).toLowerCase())){
+            this.setState({
+                [e.target.name]: e.target.value
+            })
+            return 
+        }else{
+            return
+        }
+    }
+    //check phonenumber
+    if(e.target.name==="phoneNumber"){
+        e.target.value.length === 10?this.setState({[e.target.name]: e.target.value}):console.log("not phone number")
+        return
+    }
+    this.setState({
+        [e.target.name]: e.target.value
+    })
   }
 
   async submit(e) {
     e.preventDefault()
     let {token} = await this.props.stripe.createToken({name: "Name"});
     if(!token){
-        console.log("not finish input")
+        this.setState({complete:"false"})
         return
     }
-    let response = await fetch("http://localhost:8081/charge", {
+    let response = await fetch("http://localhost:8081/charge"+localStorage.id, {
       method: "POST",
-      headers: {"Content-Type": "text/plain"},
+      headers: {
+          "Content-Type": "text/plain",
+          "authorization":`Bearer ${localStorage.jwtToken}`
+        },
       body: JSON.stringify({
           "token":token.id,
-          "name":"test",
-          "email":"test@test.com"
+          "name":this.state.name,
+          "email":this.state.email,
+          "phoneNumber":this.state.phoneNumber,
+          "address":this.state.address,
+          "total":this.props.total,
+          "userID":localStorage.id,
+          "cart":localStorage.cart?JSON.parse(localStorage.cart):""
         })
     })
     if(response.ok) {
-        this.setState({complete: true})
+        this.setState({complete: "true"})
+        this.props.removeAllShopping()
     } else{
-
+        this.setState({complete: "false"})
     };
   }
   
+    async testCLick(){
+        let respose =  await fetch("http://localhost:8081/api/charge/"+localStorage.id,{
+            method:"POST",
+            headers:{
+                "authorization":`Bearer ${localStorage.jwtToken}`
+            },
+            body: JSON.stringify({
+                "name":this.state.name,
+                "cart":localStorage.cart?JSON.parse(localStorage.cart):"",
+                "address":this.state.address,
+              })
+            })
+            .then(res=>res)
+            console.log(respose)
+   }
 
   render() {
-    if (this.state.complete) return <h1>Purchase Complete. You pay ${this.props.total}</h1>;
+    if (this.state.complete==="true") return <h1>Purchase Complete. </h1>;
 
     return (
       <form className="checkout m-2 form-group border rounded" style={{background:"#9BC53D"}}>
-      <h2 className="m-2">Submit payment</h2>
+      <h2 className="m-2" onClick={this.testCLick.bind(this)}>Submit payment</h2>
+      {this.state.complete==="false"?<h3 className="text-center" style={{color:"red"}}>something gose wrong please check your input</h3>:""}
         <div className="form-row m-2">
             <div className="form-group col-md-6">
             <label htmlFor="name">name</label>
-            <input type="text" className="form-control" id="name" placeholder="name"/>
+            <input type="text" name="name" onChange={this.handleChange.bind(this)} className="form-control" id="name" placeholder="name"/>
             </div>
             <div className="form-group col-md-6">
             <label htmlFor="inputEmail">Email</label>
-            <input type="email" className="form-control" id="inputEmail" placeholder="Email"/>
+            <input type="email" name="email" onChange={this.handleChange.bind(this)} className="form-control" id="inputEmail" placeholder="Email"/>
             </div>
         </div>
         <div className="form-group m-2">
             <label htmlFor="inputAddress">Address</label>
-            <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St"/>
+            <input type="text" name="address" onChange={this.handleChange.bind(this)} className="form-control" id="inputAddress" placeholder="1234 Main St"/>
         </div>  
         <div className="form-group m-2">
             <label htmlFor="phoneNumber">Phone Number</label>
-            <input type="text" className="form-control" id="phoneNumber" placeholder="0912345678"/>
+            <input type="text" name="phoneNumber" onChange={this.handleChange.bind(this)} className="form-control" id="phoneNumber" placeholder="0912345678"/>
         </div>
         <div className="border border-danger rounded m-2">
             <h3 className="m-2">Credit Card</h3>
