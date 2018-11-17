@@ -82,4 +82,26 @@ export async function checkAuth(userId, token){
     })
     .catch(err=>console.log(err))
 }
+
+export async function getUser(){
+    return fetch("http://localhost:8081/api/user/"+localStorage.id,{
+      headers: {
+          "Content-Type": "text/plain",
+          "authorization":`Bearer ${localStorage.jwtToken}`
+        }
+      })
+      .then(res=>res.json())
+      .catch(err=>console.log(err))
+  }
+
+export async function makeOrder(token,order){
+    return fetch("http://localhost:8081/api/charge/"+localStorage.id, {
+      method: "POST",
+      headers: {
+          "Content-Type": "text/plain",
+          "authorization":`Bearer ${localStorage.jwtToken}`
+        },
+      body: JSON.stringify({token,...order})
+    })
+}
 // http://localhost:8081/

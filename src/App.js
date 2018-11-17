@@ -55,6 +55,7 @@ class App extends Component {
         localStorage.removeItem("jwtToken")
         localStorage.removeItem("id");
         localStorage.removeItem("username");
+        this.setState({login:false})
         return false
       }
     }else{

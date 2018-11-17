@@ -21,9 +21,9 @@ class Main extends Component {
         <Route exact path="/search" render={(props)=>{
             return <Search {...this.props} {...props}/>
         }}/>
-        <Route exact path="/user" render={(props)=>{
+        {this.props.login?<Route exact path="/user" render={(props)=>{
             return <User {...this.props} {...props}/>
-        }}/>
+        }}/>:""}
         <Route exact path="/shoppingCart" render={(props)=>{
             return <ShoppingCart {...this.props} {...props}/>
         }}/>

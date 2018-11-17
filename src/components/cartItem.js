@@ -8,14 +8,12 @@ class CartItem extends Component{
         if(this.props.addShopping){
             this.props.addShopping(this.props.info.item,this.props.info.price)
         }
-        console.log("click")
         this.setState({owned: "true"})
     }
     handleRemoveShopping(){
         if(this.props.removeShopping){
             this.props.removeShopping(this.props.info.item)
         }
-        console.log("click")
     }
 
     render(){
