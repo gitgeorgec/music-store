@@ -40,11 +40,8 @@ class AuthForm extends Component{
     }
 
     render(){
-        if (this.props.login) {
-            return <Redirect to='/'/>;
-        }else{
         return (
-            <div className="container">
+            <div className="">
             <h1 className="text-center">{this.props.heading}</h1>
                 <form className="col-md-9 mx-auto col-sm-12 form-control-lg" onSubmit={this.handleSubmit}>
                     <div className="form-group">
@@ -67,7 +64,6 @@ class AuthForm extends Component{
                 </form>
             </div>
         )
-        }
     }
 }
 

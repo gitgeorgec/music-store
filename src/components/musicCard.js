@@ -25,16 +25,16 @@ class MusicCard extends Component{
 
     render(){
         return (
-            <div className="card">
+            <div className="card background_black">
                 <img className="card-img-top" src={this.props.img||HeadphoneImg} alt=""/>
                 <div className="card-body">
-                <h4>{this.props.info.name}</h4>
+                <h4 style={{color:"#fff"}}>{this.props.info.name}</h4>
                 {this.props.price?
-                    <div>Price ${this.props.price} 
-                    <span onClick={this.handleAddShopping.bind(this)}>+</span>
-                    <span onClick={this.handleRemoveShopping.bind(this)}>-</span>
-                    <div>{this.props.info.artists[0].name}</div>
-                    <div>In my cart {this.state.owned}</div>
+                    <div style={{color:"#fff"}}>Price ${this.props.price} 
+                    <span style={{color:"#fff"}} onClick={this.handleAddShopping.bind(this)}>+</span>
+                    <span style={{color:"#fff"}} onClick={this.handleRemoveShopping.bind(this)}>-</span>
+                    <div style={{color:"#fff"}}>{this.props.info.artists[0].name}</div>
+                    <div style={{color:"#fff"}}>In my cart {this.state.owned}</div>
                     </div>
                 :""}
                 </div>

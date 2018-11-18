@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class SideNav extends Component{
     constructor(props){
         super(props);
@@ -26,14 +25,35 @@ class SideNav extends Component{
             selected:e.target.value
         })
     }
+
+    hoverIn(e){
+        e.target.classList.add("font-large")
+        if(e.target.previousElementSibling){
+          e.target.previousElementSibling.classList.add("font-mid")
+        }
+        if(e.target.nextElementSibling){
+          e.target.nextElementSibling.classList.add("font-mid")
+        }
+    }
+
+    hoverOut(e){
+        e.target.classList.remove("font-large")
+        if(e.target.previousElementSibling){
+          e.target.previousElementSibling.classList.remove("font-mid")
+        }
+        if(e.target.nextElementSibling){
+          e.target.nextElementSibling.classList.remove("font-mid")
+        }
+    }
+
     render(){
         return (
-            <div className="col-md-2" style={this.backred}>
-            <p>Recommendations</p>
+            <div className="col-md-2 d-none d-md-block" style={this.backred}>
+            <h4 className="text-center pt-3 pb-2 mb-3" style={{color:"#fff",wordBreak: "break-all"}}>Recommendations</h4>
                 <ul className="list-group list-group-flush">
                     {this.state.genres.map((item,i)=>{
                         return(
-                            <li onClick={this.handleGenreChange.bind(this)} className="list-group-item" key={i}>{item}</li>
+                            <li style={{transition:"0.1s"}} onMouseEnter={this.hoverIn.bind(this)} onMouseLeave={this.hoverOut.bind(this)}  onClick={this.handleGenreChange.bind(this)} className="btn btn-outline-warning" key={i}>{item}</li>
                         )
                     })}
                 </ul>

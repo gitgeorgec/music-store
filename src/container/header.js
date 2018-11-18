@@ -10,7 +10,7 @@ class Header extends Component {
     }
     render() {
       return (
-        <header className="Head">
+        <header className="background_blue">
             <nav className="navbar navbar-expand-lg navbar-light">
                 <NavLink className="navbar-brand" to="/">Music Store {this.props.count}</NavLink>
                 {localStorage.username?<span onClick={this.handleClick.bind(this)}>Hello {localStorage.username}</span>:""}

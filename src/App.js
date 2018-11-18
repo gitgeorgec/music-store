@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import Landing from './container/landing'
 import Main from './container/Main';
 import Header from './container/header'
 import * as apiCalls from "./api/api"
@@ -115,6 +116,9 @@ class App extends Component {
   }
 
   render() {
+    // if(this.state.login){
+    //   return (<Landing />)
+    // }
     return (
       <div>
         <Header {...this.state}/>

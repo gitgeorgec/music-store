@@ -86,7 +86,7 @@ class Search extends Component{
     render(){
         return (
             <main>
-                <div className="row mx-auto">
+                <div className="row mx-auto background_yellow">
                 <SideNav onSubmit={this.handleGenreSearch.bind(this)} categories={this.state.Categories}/>
                 <div className="col-md-10 col-sm-12">
                     <div className="container mt-3">
@@ -95,7 +95,7 @@ class Search extends Component{
                         <div className="row mx-auto" style={{"minHeight":"90vh"}}>
                             {this.state.searchType!=="track"?this.state.searchResults.map((item,i)=>{
                                 return (
-                                    <div className="col-md-3 col-sm-4 col-xs-10 mb-3" key={i}>
+                                    <div className="col-md-3 col-sm-6 col-xs-10 mb-3" key={i}>
                                         <MusicCard 
                                         key={i} 
                                         info={item} 

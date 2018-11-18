@@ -15,7 +15,6 @@ class User extends Component{
 
   async componentWillMount(){
     let User = await getUser()
-    console.log(User)
     this.setState({
       order:User.order,
       username:User.username,
@@ -53,32 +52,53 @@ class User extends Component{
     this.setState({page})
   }
 
+  hoverIn(e){
+    e.target.classList.add("font-large")
+    if(e.target.previousElementSibling){
+      e.target.previousElementSibling.classList.add("font-mid")
+    }
+    if(e.target.nextElementSibling){
+      e.target.nextElementSibling.classList.add("font-mid")
+    }
+  }
+
+  hoverOut(e){
+    e.target.classList.remove("font-large")
+    if(e.target.previousElementSibling){
+      e.target.previousElementSibling.classList.remove("font-mid")
+    }
+    if(e.target.nextElementSibling){
+      e.target.nextElementSibling.classList.remove("font-mid")
+    }
+  }
+
+  sideNav(){
+    let items = ["My account","My order","My music","My playlist"]
+    return items.map((item,i)=>{
+      return <li key={i} className="nav-item btn btn-outline-warning" style={{transition:"0.1s"}} onMouseEnter={this.hoverIn.bind(this)} onMouseLeave={this.hoverOut.bind(this)} onClick={this.handlePageChange.bind(this, item)}>
+      {item}
+      </li>      
+    })
+  }
+
   render(){
       return (
       <div className="row mx-auto">
-      <nav className="col-md-2 d-md-block bg-light sidebar">
-        <div className="sidebar-sticky">
-          <ul className="nav flex-column">
-            <li className="nav-item text-center" onClick={this.handlePageChange.bind(this, "My account")}>
-                My account
-            </li>
-            <li className="nav-item" onClick={this.handlePageChange.bind(this, "My order")}>
-                My order
-            </li>
-            <li className="nav-item" onClick={this.handlePageChange.bind(this, "My music")}>
-                My music
-            </li>
+      <nav className="col-md-2 d-md-block sidebar background_red">
+        <p className="text-center pt-3 pb-2 mb-3" style={{color:"#fff",fontSize:"1.2rem"}}>Hello {localStorage.username} </p>
+          <ul className="nav flex-column mb-3">
+            {this.sideNav()}
           </ul>
-        </div>
       </nav>
-          <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4"><div className="chartjs-size-monitor"><div className="chartjs-size-monitor-expand"></div><div className="chartjs-size-monitor-shrink"></div></div>
+          <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4 "><div className="chartjs-size-monitor"><div className="chartjs-size-monitor-expand"></div><div className="chartjs-size-monitor-shrink"></div></div>
               <div className="pt-3 pb-2 mb-3 border-bottom">
               <h1>{this.state.page}</h1>
               </div>
-              {this.state.page==="My account"?this.account():""}
-              {this.state.page==="My order"?this.orderList():""}
-              {this.state.page==="My music"?this.ShoppingItems():""}
-
+              <div style={{minHeight:"100vh"}}>
+                {this.state.page==="My account"?this.account():""}
+                {this.state.page==="My order"?this.orderList():""}
+                {this.state.page==="My music"?this.ShoppingItems():""}
+              </div>
           </main>
       </div>
       )

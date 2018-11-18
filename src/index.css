@@ -8,16 +8,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 
-blue   #5BC0EB
-yellow #FDE74C
-green  #9BC53D
-red    #C3423F
-black  #404E4D 
-*/
+.background_yellow{
+  background: #FDE74C
+}
 
-.Head{
+.background_green{
+  background: #9BC53D
+}
+
+.background_red{
+  background: #C3423F
+}
+
+.background_blue{
   background: #5BC0EB
+}
+.background_black{
+  background: #404E4D
 }
 
 .jumbo_back {
@@ -63,4 +70,11 @@ black  #404E4D
   100% {
     transform: rotate(360deg);
   }
+}
+/* hover effect */
+.font-large {
+  font-size: 2rem;
+}
+.font-mid {
+  font-size: 1.5rem;
 }

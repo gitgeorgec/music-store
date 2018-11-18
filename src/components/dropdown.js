@@ -43,10 +43,10 @@ class Dropdown extends Component {
             {this.props.login? (
                     <React.Fragment>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/" onClick={this.handleLogout.bind(this)}>Log Out</Link>
+                            <NavLink exact className="nav-link" to="/user">User</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink exact className="nav-link" to="/user">User</NavLink>
+                            <Link className="nav-link" to="/" onClick={this.handleLogout.bind(this)}>Log Out</Link>
                         </li>
                     </React.Fragment>
 				):(

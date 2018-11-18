@@ -5,7 +5,7 @@ import Search from './search'
 import User from './user'
 import ShoppingCart from "./shoppingChat"
 import AuthForm from '../components/authForm'
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
 
 const IndexPage = () => (<Index />)
 const AboutPage = () => (<About />)
@@ -37,6 +37,13 @@ class Main extends Component {
             <AuthForm heading="log in" sign {...this.props} {...props}/>
           )
         }}/>
+        <Route exact path="/:other" render={() => (
+          this.state.login? (
+            <Redirect to="/"/>
+          ) : (
+            <Redirect to="/login"/>
+          )
+        )}/>
       </Switch>
       )
     };
