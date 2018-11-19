@@ -16,7 +16,7 @@ class SideNav extends Component{
         "background":"#C3423F"
     }
 
-    handleGenreChange(e){
+    handleGenreClick(e){
         if(this.props.onSubmit){
             this.props.onSubmit(e.target.innerText)
             console.log(e.target.innerText)
@@ -53,7 +53,7 @@ class SideNav extends Component{
                 <ul className="list-group list-group-flush">
                     {this.state.genres.map((item,i)=>{
                         return(
-                            <li style={{transition:"0.1s"}} onMouseEnter={this.hoverIn.bind(this)} onMouseLeave={this.hoverOut.bind(this)}  onClick={this.handleGenreChange.bind(this)} className="btn btn-outline-warning" key={i}>{item}</li>
+                            <li style={{transition:"0.1s"}} onMouseEnter={this.hoverIn.bind(this)} onMouseLeave={this.hoverOut.bind(this)}  onClick={this.handleGenreClick.bind(this)} className="btn btn-outline-warning" key={i}>{item}</li>
                         )
                     })}
                 </ul>

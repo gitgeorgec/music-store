@@ -14,7 +14,6 @@ class Jumbotron extends Component{
                 <p className="lead" style={this.white}>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
                 <hr className="my-4"/>
                 <p style={this.white}>It uses utility classNamees for typography and spacing to space content out within the larger container.</p>
-                <button className="btn btn-primary btn-lg">Learn more</button>
             </div>
         )
     }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import UserNav from '../components/userNav'
 import CartItem from '../components/cartItem'
 import {Elements, StripeProvider} from 'react-stripe-elements';
 import CheckoutForm from '../components/CheckoutForm';
@@ -40,38 +39,37 @@ class ShoppingCart extends Component{
 
   render(){
     return (
-    <div className="row mx-auto">
-      <UserNav />
-        <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <div className="chartjs-size-monitor">
-            <div className="chartjs-size-monitor-expand"></div>
-            <div className="chartjs-size-monitor-shrink"></div>
-          </div>
+    <div className="">
+      <div className="row mx-auto">
+        <div role="main" className="col-md-12 px-4">
           <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 className="h2">My cart</h1>
           <div className="btn-toolbar mb-2 mb-md-0">
             <p className="mr-3">total price:{this.props.total}</p>
             <div className="btn-group mr-2">
-            {this.props.login?<button className="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">check out</button>:<button className="btn btn-sm btn-outline-primary" onClick={this.handleCheckOut.bind(this)} >check out</button>}
-            <button onClick={this.handleCancel.bind(this)} className="btn btn-sm btn-outline-danger">remove all</button>
+              <button className="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">check out</button>
+              <button onClick={this.handleCancel.bind(this)} className="btn btn-sm btn-outline-danger">remove all</button>
             </div>
           </div>
-          </div>
+        </div>
+        <div className="background_black p-2" style={{minHeight:"80vh"}}>
           {this.ShoppingItems()}
-          <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog">
-            <div className="modal-dialog modal-dialog-centered" role="document">
-              <div className="modal-content">
-                <StripeProvider apiKey="pk_test_WtTS1S3oqOzys4iqVJtSpOaB">
-                  <div className="example">
-                    <Elements>
-                      <CheckoutForm {...this.props}/>
-                    </Elements>
-                  </div>
+        </div>
+        <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog">
+          <div className="modal-dialog modal-dialog-centered" role="document">
+            <div className="modal-content">
+              <StripeProvider apiKey="pk_test_WtTS1S3oqOzys4iqVJtSpOaB">
+                <div className="example">
+                  <Elements>
+                    <CheckoutForm {...this.props}/>
+                  </Elements>
+                </div>
                 </StripeProvider>
               </div>
             </div>
           </div>          
-        </main>
+        </div>
+      </div>
     </div>
     )
   }

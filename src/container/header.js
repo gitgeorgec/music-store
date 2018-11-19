@@ -3,17 +3,11 @@ import Dropdown from '../components/dropdown.js'
 import {NavLink} from 'react-router-dom';
 
 class Header extends Component {
-    handleClick(){
-        if(this.props.add){
-            this.props.add()
-        }
-    }
     render() {
       return (
         <header className="background_blue">
             <nav className="navbar navbar-expand-lg navbar-light">
-                <NavLink className="navbar-brand" to="/">Music Store {this.props.count}</NavLink>
-                {localStorage.username?<span onClick={this.handleClick.bind(this)}>Hello {localStorage.username}</span>:""}
+                <NavLink className="navbar-brand" to="/">Music Store</NavLink>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                     <span className="navbar-toggler-icon"></span>
                 </button>

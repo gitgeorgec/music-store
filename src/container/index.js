@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import HeadphoneImg from '../img/malte-wingen-381988-unsplash.jpg'
 import Jumbotron from '../components/jumbotoon'
+import {Link } from 'react-router-dom';
 
 class Main extends Component {
     
@@ -12,7 +12,8 @@ class Main extends Component {
     }
     largeText ={
         "fontSize": "4rem",
-        "fontWeigth":"bold"
+        "fontWeigth":"bold",
+        "color":"white"
     }
     marginLarge={
         "margin":"3rem 3rem"
@@ -20,28 +21,49 @@ class Main extends Component {
 
     render() {
       return (
-
-        <main>
+        <main className="background_yellow" style={{minHeight:"100vh"}}>
             <Jumbotron {...this.props}/>
-            <div style={this.marginLarge}>
-                <div className="container" style={this.backyellow}>
-                    <div className="row text-align-center">
-                        <h1 className="col-12 text-center" style={this.largeText}>Music Store</h1>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-6 col-sm-6 order-md-2 mx-auto my-auto">
-                            <img src={HeadphoneImg} alt="" className="img-fluid"/>
-                        </div>
-                        <div className="col-md-6 col-sm-12 my-auto">
-                            <p className="col-md-10 col-sm-12 lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, reprehenderit quidem! Quos, illo! Nulla totam molestiae ea voluptatum, tempora quibusdam harum itaque culpa error inventore provident asperiores unde natus laborum?voluptatum, tempora quibusdam harum itaque culpa error inventore provident asperiores unde natus laborum?</p>
-                            <div style={this.marginLarge}>
-                                <a className="btn btn-lg btn-primary" href="/">GET START</a>
+            <div>
+                <div className="row mx-auto">
+                    <div className="col-md-3 col-sm-6 col-xs-12 mb-3" style={{minWidth:"400px"}}>
+                        <Link to="/search">
+                            <div className="card background_search shadow" style={{height:"33vh"}}>
+                                    <div className="card-body">
+                                        <h2 className="card-title text-center" style={this.largeText}>Search</h2>
+                                    </div>
                             </div>
-                            <div>
-                            <p className="col-md-10 col-sm-12 lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, reprehenderit quidem! Quos, illo! Nulla totam molestiae ea voluptatum, tempora quibusdam harum itaque culpa error</p>
-                            </div>
-                        </div>
+                        </Link>
                     </div>
+                    <div className="col-md-3 col-sm-6 col-xs-12 mb-3" style={{minWidth:"400px"}}>
+                        <Link to="/shoppingCart">
+                            <div className="card background_shopping shadow" style={{height:"33vh"}}>
+                                <div className="card-body">
+                                <h2 className="card-title text-center" style={this.largeText}>shoppign cart</h2>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className="col-md-3 col-sm-6 col-xs-12 mb-3" style={{minWidth:"400px"}}>
+                        <Link to="/about">
+                            <div className="card background_about shadow" style={{height:"33vh"}}>
+                                <div className="card-body">
+                                <h2 className="card-title text-center" style={this.largeText}>about</h2>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className="col-md-3 col-sm-6 col-xs-12 mb-3" style={{minWidth:"400px"}}>
+                        <Link to="/user">
+                            <div className="card background_user shadow" style={{height:"33vh"}}>
+                                <div className="card-body">
+                                <h2 className="card-title text-center" style={this.largeText}>User</h2>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className="col-md-3 col-sm-6 col-xs-12"></div>
+                    <div className="col-md-3 col-sm-6 col-xs-12"></div>
+                    <div className="col-md-3 col-sm-6 col-xs-12"></div>
                 </div>
             </div>
         </main>

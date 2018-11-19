@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Landing from './container/landing'
+import Landing from './container/landing'
 import Main from './container/Main';
 import Header from './container/header'
 import * as apiCalls from "./api/api"
@@ -10,10 +10,8 @@ class App extends Component {
     super(props)
     this.state={
         shoppingCart:{},
-        count:0,
         login:false,
         logout:this.logout,
-        add:this.addcount.bind(this),
         total:0,
         addShopping:this.addShopping.bind(this),
         removeShopping:this.removeShopping.bind(this),
@@ -40,9 +38,9 @@ class App extends Component {
     this.authUser()
   }
 
-  componentDidUpdate(){
-    this.authUser()
-  }
+  // componentDidUpdate(){
+  //   this.authUser()
+  // }
 
   async authUser(){
     if(localStorage.jwtToken){
@@ -70,10 +68,6 @@ class App extends Component {
     localStorage.removeItem("id");
     localStorage.removeItem("username");
     this.setState({login:false})
-  }
-
-  addcount(s=1){
-    this.setState((prevState,props)=>({count:prevState.count+s}))
   }
 
   addShopping(item,price,img){
@@ -116,9 +110,9 @@ class App extends Component {
   }
 
   render() {
-    // if(this.state.login){
-    //   return (<Landing />)
-    // }
+    if(!this.state.login){
+      return (<Landing {...this.state}/>)
+    }
     return (
       <div>
         <Header {...this.state}/>

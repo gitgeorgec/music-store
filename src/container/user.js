@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CartItem from '../components/cartItem'
+// import ShoppingCart from "./shoppingChat"
 import { getUser} from '../api/api'
 
 class User extends Component{
@@ -8,7 +9,7 @@ class User extends Component{
     this.state={
       username:"",
       email:"",
-      page:"My account",
+      page:"My music",
       products:"",
     }
   }
@@ -73,7 +74,7 @@ class User extends Component{
   }
 
   sideNav(){
-    let items = ["My account","My order","My music","My playlist"]
+    let items = ["My music","My playlist","My account","My order",]
     return items.map((item,i)=>{
       return <li key={i} className="nav-item btn btn-outline-warning" style={{transition:"0.1s"}} onMouseEnter={this.hoverIn.bind(this)} onMouseLeave={this.hoverOut.bind(this)} onClick={this.handlePageChange.bind(this, item)}>
       {item}
@@ -98,6 +99,7 @@ class User extends Component{
                 {this.state.page==="My account"?this.account():""}
                 {this.state.page==="My order"?this.orderList():""}
                 {this.state.page==="My music"?this.ShoppingItems():""}
+                {/* {this.state.page==="My cart"?<ShoppingCart {...this.props}/>:""} */}
               </div>
           </main>
       </div>

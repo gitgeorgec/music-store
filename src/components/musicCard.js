@@ -26,7 +26,7 @@ class MusicCard extends Component{
     render(){
         return (
             <div className="card background_black">
-                <img className="card-img-top" src={this.props.img||HeadphoneImg} alt=""/>
+                <img className="card-img-top" src={this.props.img?this.props.img:HeadphoneImg} alt=""/>
                 <div className="card-body">
                 <h4 style={{color:"#fff"}}>{this.props.info.name}</h4>
                 {this.props.price?

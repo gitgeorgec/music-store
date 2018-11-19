@@ -18,7 +18,7 @@ class CartItem extends Component{
 
     render(){
         return (
-            <div className="row ">
+            <div className="row pt-2 pb-2 m-1 background_green">
                 <div className="col-lg-2 col-md-3 col-sm-4 col-6">
                     <img className="card-img" src={this.props.info.img||HeadphoneImg} alt=""/>
                 </div>

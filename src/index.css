@@ -26,18 +26,98 @@ body {
 .background_black{
   background: #404E4D
 }
+.background_transparent{
+  background: rgba(0, 0, 0, 0.406),
+}
+
+.background_shopping{
+  background: url("./img/laura-marques-647991-unsplash.jpg");
+  background-position: center;
+  background-size: 120%;
+  background-color: #404E4D;  
+  background-repeat: no-repeat;
+  transition:background 0.5s;
+  filter: grayscale(70%)
+
+}
+.background_about{
+  background: url("./img/rawpixel-649905-unsplash.jpg");
+  background-position: center;
+  background-size: 140%;
+  background-color: #404E4D;
+  background-repeat: no-repeat;
+  transition:background 0.5s;
+  filter: grayscale(70%)
+}
+.background_search{
+  background: url("./img/marten-newhall-226045-unsplash.jpg");
+  background-position: center;
+  background-size: 140%;
+  background-color: #404E4D;
+  background-repeat: no-repeat;
+  transition: background 0.5s;
+  filter: grayscale(70%)
+}
+.background_user{
+  background: url("./img/jamie-street-804224-unsplash.jpg");
+  background-position: center;
+  background-size: 110%;
+  background-color: #404E4D;
+  background-repeat: no-repeat;
+  transition:background 0.5s;
+  filter: grayscale(70%)
+}
+
+.background_shopping:hover {
+  background-size: 110%;
+  filter: grayscale(0%)
+}
+.background_about:hover {
+  background-size: 130%;
+  filter: grayscale(0%)
+}
+.background_search:hover {
+  background-size: 130%;
+  filter: grayscale(0%)
+}
+.background_user:hover {
+  background-size: 100%;
+  filter: grayscale(0%)
+}
+.dark-shadow{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+}
+.dark-shadow:hover{
+  background: rgba(0, 0, 0, 0.57);
+}
+
+.landing_back{
+  background: url("./img/anthony-delanoix-15928-unsplash2.jpg");
+  background-size: 200%;
+  background-position: center;
+  
+}
 
 .jumbo_back {
   background: url("./img/anthony-delanoix-15928-unsplash2.jpg");
   background-position: center;
   background-size: 120%;
   background-repeat: no-repeat;
-  background-color: #000000;
+  background-color: #FDE74C;
 }
 
 @media screen and (max-width:860px){
   .jumbo_back {
     background-size: 150%;
+  }
+
+  .landing_back{
+    background-size: 70%;
   }
 }
 @media screen and (max-width:640px){

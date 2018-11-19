@@ -4,15 +4,12 @@ import About from './about'
 import Search from './search'
 import User from './user'
 import ShoppingCart from "./shoppingChat"
-import AuthForm from '../components/authForm'
 import {Switch, Route, Redirect} from 'react-router-dom';
 
 const IndexPage = () => (<Index />)
 const AboutPage = () => (<About />)
 
 class Main extends Component {
-  
-  SearchPage = ()=>(<Search {...this.props}/>)
   render() {
   return (
       <Switch>
@@ -21,28 +18,14 @@ class Main extends Component {
         <Route exact path="/search" render={(props)=>{
             return <Search {...this.props} {...props}/>
         }}/>
-        {this.props.login?<Route exact path="/user" render={(props)=>{
+        <Route exact path="/user" render={(props)=>{
             return <User {...this.props} {...props}/>
-        }}/>:""}
+        }}/>
         <Route exact path="/shoppingCart" render={(props)=>{
             return <ShoppingCart {...this.props} {...props}/>
         }}/>
-        <Route exact path="/register" render={(props)=>{
-          return(
-            <AuthForm heading="register" {...this.props} {...props}/>
-          )
-        }}/>
-        <Route exact path="/login" render={(props)=>{
-          return(
-            <AuthForm heading="log in" sign {...this.props} {...props}/>
-          )
-        }}/>
         <Route exact path="/:other" render={() => (
-          this.state.login? (
-            <Redirect to="/"/>
-          ) : (
-            <Redirect to="/login"/>
-          )
+          <Redirect to="/"/>
         )}/>
       </Switch>
       )
