@@ -17,12 +17,12 @@ class AuthForm extends Component{
   async handleSubmit(e){
     e.preventDefault()
     const path = this.state.sign?"signin":"signup"
-    const url = "http://localhost:8081/api/auth/"+path
-    console.log(url)
+    // const url = "https://secret-plateau-59047.herokuapp.com/api/auth/"+path
+    // console.log(url)
     const username=this.state.username 
     const email=this.state.email
     const password=this.state.password
-    const data = await apiCalls.getAuth(url,username,email,password)
+    const data = await apiCalls.getAuth(path,username,email,password)
     if(data){
         localStorage.setItem("jwtToken", data.token);
         localStorage.setItem("id", data.id);

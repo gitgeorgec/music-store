@@ -42,7 +42,8 @@ export async function getData(searchURL,token){
     .catch(err=>console.log(err))
 }
 
-export async function getAuth(url,username,email,password){
+export async function getAuth(sign,username,email,password){
+    const url = 'https://secret-plateau-59047.herokuapp.com/api/auth/'+sign
     return fetch(url,{
         method:"POST",
         headers: {
