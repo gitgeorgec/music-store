@@ -1,7 +1,7 @@
 {
   "main.css": "/music-store/static/css/main.2162a1a9.chunk.css",
-  "main.js": "/music-store/static/js/main.d2c8379e.chunk.js",
-  "main.js.map": "/music-store/static/js/main.d2c8379e.chunk.js.map",
+  "main.js": "/music-store/static/js/main.39b53b23.chunk.js",
+  "main.js.map": "/music-store/static/js/main.39b53b23.chunk.js.map",
   "static/js/1.a1a8b8b9.chunk.js": "/music-store/static/js/1.a1a8b8b9.chunk.js",
   "static/js/1.a1a8b8b9.chunk.js.map": "/music-store/static/js/1.a1a8b8b9.chunk.js.map",
   "runtime~main.js": "/music-store/static/js/runtime~main.8488dd54.js",
@@ -11,6 +11,6 @@
   "static/media/Spotify_Logo_RGB_Green.png": "/music-store/static/media/Spotify_Logo_RGB_Green.11dc437a.png",
   "static/css/main.2162a1a9.chunk.css.map": "/music-store/static/css/main.2162a1a9.chunk.css.map",
   "index.html": "/music-store/index.html",
-  "precache-manifest.c61bf349c7c74d48d472ea7c68b86b09.js": "/music-store/precache-manifest.c61bf349c7c74d48d472ea7c68b86b09.js",
+  "precache-manifest.3ffaf82f017ac0eb6df9fe0d3caef2a9.js": "/music-store/precache-manifest.3ffaf82f017ac0eb6df9fe0d3caef2a9.js",
   "service-worker.js": "/music-store/service-worker.js"
 }
