@@ -66,7 +66,7 @@ export async function getAuth(url,username,email,password){
 }
 
 export async function checkAuth(userId, token){
-    const url="http://localhost:8081/test/" +userId
+    const url="https://secret-plateau-59047.herokuapp.com/test/" +userId
     return fetch(url,{
         headers:{
             "authorization":`Bearer ${token}`
@@ -84,7 +84,7 @@ export async function checkAuth(userId, token){
 }
 
 export async function getUser(){
-    return fetch("http://localhost:8081/api/user/"+localStorage.id,{
+    return fetch("https://secret-plateau-59047.herokuapp.com/api/user/"+localStorage.id,{
       headers: {
           "Content-Type": "text/plain",
           "authorization":`Bearer ${localStorage.jwtToken}`
@@ -95,7 +95,7 @@ export async function getUser(){
   }
 
 export async function makeOrder(token,order){
-    return fetch("http://localhost:8081/api/charge/"+localStorage.id, {
+    return fetch("https://secret-plateau-59047.herokuapp.com/api/charge/"+localStorage.id, {
       method: "POST",
       headers: {
           "Content-Type": "text/plain",
