@@ -14,11 +14,17 @@ class AuthForm extends Component{
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  componentDidUpdate(){
+    console.log("updata")
+    console.log(this.state.email,this.state.password)
+    if(this.state.email==="test@test.com"&&this.state.password==="test"){
+      document.querySelector("button").click()
+    }
+  }
+
   async handleSubmit(e){
     e.preventDefault()
     const path = this.state.sign?"signin":"signup"
-    // const url = "https://secret-plateau-59047.herokuapp.com/api/auth/"+path
-    // console.log(url)
     const username=this.state.username 
     const email=this.state.email
     const password=this.state.password
@@ -27,7 +33,6 @@ class AuthForm extends Component{
         localStorage.setItem("jwtToken", data.token);
         localStorage.setItem("id", data.id);
         localStorage.setItem("username", data.username);
-        // this.props.history.push("/")
     }else {
         this.setState({err:true})
     }

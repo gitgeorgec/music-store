@@ -12,8 +12,9 @@ class Main extends Component {
     }
     largeText ={
         "fontSize": "4rem",
-        "fontWeigth":"bold",
-        "color":"white"
+        "fontWeigth":"bolder",
+        "color":"white",
+        "textShadow":"1px 1px 0 black"
     }
     marginLarge={
         "margin":"3rem 3rem"
@@ -23,48 +24,50 @@ class Main extends Component {
       return (
         <main className="background_yellow" style={{minHeight:"100vh"}}>
             <Jumbotron {...this.props}/>
-            <div>
-                <div className="row mx-auto">
-                    <div className="col-md-3 col-sm-6 col-xs-12 mb-3" style={{minWidth:"400px"}}>
-                        <Link to="/search">
-                            <div className="card background_search shadow" style={{height:"33vh"}}>
-                                    <div className="card-body">
-                                        <h2 className="card-title text-center" style={this.largeText}>Search</h2>
-                                    </div>
+            <div className="row mx-auto">
+                <div className="col-md-3 col-sm-6 col-xs-12 mb-3" style={{minWidth:"360px"}}>
+                    <Link to="/search">
+                        <div className="card background_search shadow" style={{height:"33vh"}}>
+                            <div className="card-body"style={this.largeText}>
+                                <p className="card-title text-center">search <br/><i className="fas fa-search"style={{color:"#C3423F"}}></i></p>
+                                
                             </div>
-                        </Link>
-                    </div>
-                    <div className="col-md-3 col-sm-6 col-xs-12 mb-3" style={{minWidth:"400px"}}>
-                        <Link to="/shoppingCart">
-                            <div className="card background_shopping shadow" style={{height:"33vh"}}>
-                                <div className="card-body">
-                                <h2 className="card-title text-center" style={this.largeText}>shoppign cart</h2>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className="col-md-3 col-sm-6 col-xs-12 mb-3" style={{minWidth:"400px"}}>
-                        <Link to="/about">
-                            <div className="card background_about shadow" style={{height:"33vh"}}>
-                                <div className="card-body">
-                                <h2 className="card-title text-center" style={this.largeText}>about</h2>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className="col-md-3 col-sm-6 col-xs-12 mb-3" style={{minWidth:"400px"}}>
-                        <Link to="/user">
-                            <div className="card background_user shadow" style={{height:"33vh"}}>
-                                <div className="card-body">
-                                <h2 className="card-title text-center" style={this.largeText}>User</h2>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className="col-md-3 col-sm-6 col-xs-12"></div>
-                    <div className="col-md-3 col-sm-6 col-xs-12"></div>
-                    <div className="col-md-3 col-sm-6 col-xs-12"></div>
+                        </div>
+                    </Link>
                 </div>
+                <div className="col-md-3 col-sm-6 col-xs-12 mb-3" style={{minWidth:"360px"}}>
+                    <Link to="/shoppingCart">
+                        <div className="card background_shopping shadow" style={{height:"33vh"}}>
+                            <div className="card-body"style={this.largeText}>
+                                <p className="card-title text-center">Shopping Cart<br/><i className="fas fa-shopping-cart" style={{color:"#9BC53D"}}></i></p>
+                                <p className="text-center" ></p>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="col-md-3 col-sm-6 col-xs-12 mb-3" style={{minWidth:"360px"}}>
+                    <Link to="/user">
+                        <div className="card background_user shadow" style={{height:"33vh"}}>
+                            <div className="card-body"style={this.largeText}>
+                                <p className="card-title text-center">User<br/><i className="fas fa-user" style={{color:"#5BC0EB"}}></i></p>
+                                <p className="text-center" ></p>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="col-md-3 col-sm-6 col-xs-12 mb-3" style={{minWidth:"360px"}}>
+                    <Link to="/about">
+                        <div className="card background_about shadow" style={{height:"33vh"}}>
+                            <div className="card-body"style={this.largeText}>
+                                    <p className="card-title text-center">About<br/><i className="fas fa-book" style={{color:"#C3423F"}}></i></p>
+                                    <p className="text-center" ></p>
+                                </div>
+                            </div>
+                    </Link>
+                </div>
+                <div className="col-md-3 col-sm-6 col-xs-12"></div>
+                <div className="col-md-3 col-sm-6 col-xs-12"></div>
+                <div className="col-md-3 col-sm-6 col-xs-12"></div>
             </div>
         </main>
       );

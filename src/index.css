@@ -33,30 +33,27 @@ body {
 .background_shopping{
   background: url("./img/laura-marques-647991-unsplash.jpg");
   background-position: center;
-  background-size: 120%;
+  background-size: 140%;
   background-color: #404E4D;  
   background-repeat: no-repeat;
   transition:background 0.5s;
-  filter: grayscale(70%)
 
 }
 .background_about{
   background: url("./img/rawpixel-649905-unsplash.jpg");
   background-position: center;
-  background-size: 140%;
+  background-size: 165%;
   background-color: #404E4D;
   background-repeat: no-repeat;
   transition:background 0.5s;
-  filter: grayscale(70%)
 }
 .background_search{
   background: url("./img/marten-newhall-226045-unsplash.jpg");
   background-position: center;
-  background-size: 140%;
+  background-size: 170%;
   background-color: #404E4D;
   background-repeat: no-repeat;
   transition: background 0.5s;
-  filter: grayscale(70%)
 }
 .background_user{
   background: url("./img/jamie-street-804224-unsplash.jpg");
@@ -65,24 +62,23 @@ body {
   background-color: #404E4D;
   background-repeat: no-repeat;
   transition:background 0.5s;
-  filter: grayscale(70%)
 }
 
 .background_shopping:hover {
-  background-size: 110%;
-  filter: grayscale(0%)
+  background-size: 130%;
+  filter: brightness(1.2)
 }
 .background_about:hover {
-  background-size: 130%;
-  filter: grayscale(0%)
+  background-size: 150%;
+  filter: brightness(1.2)
 }
 .background_search:hover {
-  background-size: 130%;
-  filter: grayscale(0%)
+  background-size: 150%;
+  filter: brightness(1.2)
 }
 .background_user:hover {
   background-size: 100%;
-  filter: grayscale(0%)
+  filter: brightness(1.2)
 }
 .dark-shadow{
   position: absolute;

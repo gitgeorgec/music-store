@@ -46,7 +46,7 @@ class SearchBar extends Component {
                 onChange = {this.handleSearchValueChange.bind(this)} 
                 onKeyPress ={this.handleEnterPress}/>
             <div className="input-group-append">
-                <span onClick={this.handleSearch.bind(this)} className="input-group-text btn btn-success">Search</span>
+                <span onClick={this.handleSearch.bind(this)} className="btn btn-success">Search</span>
             </div>
       </div>
       );

@@ -85,7 +85,7 @@ export async function checkAuth(userId, token){
 }
 
 export async function getUser(){
-    return fetch("https://secret-plateau-59047.herokuapp.com/api/user/"+localStorage.id,{
+    return fetch("http://localhost:8081/api/user/"+localStorage.id,{
       headers: {
           "Content-Type": "text/plain",
           "authorization":`Bearer ${localStorage.jwtToken}`

@@ -7,10 +7,6 @@ class SideNav extends Component{
             genres:["acoustic","alternative", "anime","blues", "bossanova", "chill", "classical", "dance", "deep-house","disco", "drum-and-bass","dubstep","electronic", "funk","groove", "guitar", "happy", "hard-rock", "hip-hop", "holidays", "house", "indie", "industrial", "j-pop", "j-rock", "jazz", "k-pop", "mandopop", "metal", "movies", "new-release", "opera","piano", "pop", "punk","road-trip", "rock","rock-n-roll","romance","sad","sleep","soul","study","summer","tango","trance","work-out"],
         }
     }
-
-    backred ={
-        "background":"#C3423F"
-    }
     screen ={
         "height":"100vh",
         "background":"#C3423F"
@@ -48,7 +44,9 @@ class SideNav extends Component{
 
     render(){
         return (
-            <div className="col-md-2 d-none d-md-block" style={this.backred}>
+            <div className="col-md-2 d-none d-md-block background_red">
+            <div className="">
+            <div>hello</div>
             <h4 className="text-center pt-3 pb-2 mb-3" style={{color:"#fff",wordBreak: "break-all"}}>Recommendations</h4>
                 <ul className="list-group list-group-flush">
                     {this.state.genres.map((item,i)=>{
@@ -57,6 +55,7 @@ class SideNav extends Component{
                         )
                     })}
                 </ul>
+            </div>
             </div>
         )
     }
