@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "4e44590340d7ea518928b1be5d0b485c",
-    "url": "/music-store/static/media/rawpixel-649905-unsplash.4e445903.jpg"
+    "revision": "fb4644a096cc5cc29bd336319b506421",
+    "url": "/music-store/static/media/Stripe logo - blue.fb4644a0.png"
   },
   {
-    "revision": "39b53b23f5144e789ef0",
-    "url": "/music-store/static/css/main.2162a1a9.chunk.css"
+    "revision": "7b7cee15aadc917a584d",
+    "url": "/music-store/static/css/main.4da04c85.chunk.css"
   },
   {
-    "revision": "a1a8b8b97e8d4df37fd4",
-    "url": "/music-store/static/js/1.a1a8b8b9.chunk.js"
+    "revision": "0d5454399d383a43e7d5",
+    "url": "/music-store/static/js/1.0d545439.chunk.js"
   },
   {
     "revision": "8488dd5416f04934094b",
@@ -24,16 +24,20 @@ self.__precacheManifest = [
     "url": "/music-store/static/media/Spotify_Logo_RGB_Green.11dc437a.png"
   },
   {
-    "revision": "39b53b23f5144e789ef0",
-    "url": "/music-store/static/js/main.39b53b23.chunk.js"
+    "revision": "7b7cee15aadc917a584d",
+    "url": "/music-store/static/js/main.7b7cee15.chunk.js"
   },
   {
-    "revision": "eb34bc6df41610807fe844ddedddb7e3",
-    "url": "/music-store/static/media/laura-marques-647991-unsplash.eb34bc6d.jpg"
+    "revision": "4e44590340d7ea518928b1be5d0b485c",
+    "url": "/music-store/static/media/rawpixel-649905-unsplash.4e445903.jpg"
   },
   {
     "revision": "4dc62de75df1b484923c72d47aa8c4d2",
     "url": "/music-store/static/media/marten-newhall-226045-unsplash.4dc62de7.jpg"
+  },
+  {
+    "revision": "eb34bc6df41610807fe844ddedddb7e3",
+    "url": "/music-store/static/media/laura-marques-647991-unsplash.eb34bc6d.jpg"
   },
   {
     "revision": "aab4905da9e66af54e45077526289668",
@@ -44,7 +48,7 @@ self.__precacheManifest = [
     "url": "/music-store/static/media/anthony-delanoix-15928-unsplash2.a21982e6.jpg"
   },
   {
-    "revision": "4148d417439d0ca3ee1bd0a082a726fd",
+    "revision": "16ff4d4ef831745685b989525c0f6ac2",
     "url": "/music-store/index.html"
   }
 ];
