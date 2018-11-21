@@ -117,6 +117,11 @@ class User extends Component{
     }
   }
 
+  handleSideShowUP(){
+    const side = document.querySelector(".side-nav")
+    side.classList.toggle("hide-nav")
+  }
+
   sideNav(){
     let items = ["My music","My account","My order",]
     return items.map((item,i)=>{
@@ -126,15 +131,21 @@ class User extends Component{
     })
   }
 
+
+
   render(){
       return (
-      <div className="row mx-auto" style={{position:"relative"}}>
-      <nav className="col-md-2 background_red">
-        <p className="text-center pt-3 pb-2 mb-3" style={{color:"#fff",fontSize:"1.2rem"}}>Hello {localStorage.username} </p>
+        <div className="row mx-auto" style={{position:"relative"}}>
+          <i className="fas fa-arrow-circle-right position-fixed btn" style={{zIndex:"2", top:"50%", left:"-25px", fontSize:"2rem"}} onClick={this.handleSideShowUP.bind(this)}></i>          
+          <nav className="col-md-2 background_red side-nav hide-nav" style={{transition:"0.3s"}}>
+          <p className="text-center pt-3 pb-2 mb-3" style={{color:"#fff",fontSize:"1.2rem"}}>
+            Hello {localStorage.username}
+            <i className="fas fa-times-circle btn close-tag" onClick={this.handleSideShowUP.bind(this)}></i>
+          </p>
           <ul className="nav flex-column mb-3">
             {this.sideNav()}
           </ul>
-      </nav>
+          </nav>
           <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4 "><div className="chartjs-size-monitor"><div className="chartjs-size-monitor-expand"></div><div className="chartjs-size-monitor-shrink"></div></div>
               <div className="pt-3 pb-2 mb-3 border-bottom">
               <h1>{this.state.page}</h1>
@@ -147,7 +158,7 @@ class User extends Component{
                 </div>
               </div>
           </main>
-      </div>
+        </div>
       )
   }
 }

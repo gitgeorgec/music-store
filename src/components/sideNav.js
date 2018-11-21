@@ -41,22 +41,29 @@ class SideNav extends Component{
           e.target.nextElementSibling.classList.remove("font-mid")
         }
     }
+    handleSideShowUP(){
+        const side = document.querySelector(".side-nav")
+        side.classList.toggle("hide-nav")
+      }
 
     render(){
         return (
-            <div className="col-md-2 d-none d-md-block background_red">
-            <div className="">
-            <div>hello</div>
-            <h4 className="text-center pt-3 pb-2 mb-3" style={{color:"#fff",wordBreak: "break-all"}}>Recommendations</h4>
-                <ul className="list-group list-group-flush">
-                    {this.state.genres.map((item,i)=>{
-                        return(
-                            <li style={{transition:"0.1s"}} onMouseEnter={this.hoverIn.bind(this)} onMouseLeave={this.hoverOut.bind(this)}  onClick={this.handleGenreClick.bind(this)} className="btn btn-outline-warning" key={i}>{item}</li>
-                        )
-                    })}
-                </ul>
-            </div>
-            </div>
+            <React.Fragment>
+                <i className="fas fa-arrow-circle-right position-fixed btn" style={{zIndex:"3", top:"50%", left:"-25px", fontSize:"2rem"}} onClick={this.handleSideShowUP.bind(this)}></i>
+                <div className="col-md-2 background_red side-nav hide-nav" style={{transition:"0.3s"}}>
+                    <h4 className="text-center pt-3 pb-2 mb-3" style={{color:"#fff",wordBreak: "break-all"}}>
+                    Recommendations
+                    <i className="fas fa-times-circle btn close-tag" onClick={this.handleSideShowUP.bind(this)}></i>
+                    </h4>
+                    <ul className="list-group list-group-flush">
+                        {this.state.genres.map((item,i)=>{
+                            return(
+                                <li style={{transition:"0.1s"}} onMouseEnter={this.hoverIn.bind(this)} onMouseLeave={this.hoverOut.bind(this)}  onClick={this.handleGenreClick.bind(this)} className="btn btn-outline-warning" key={i}>{item}</li>
+                            )
+                        })}
+                    </ul>
+                </div>
+            </React.Fragment>
         )
     }
 }

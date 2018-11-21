@@ -154,3 +154,33 @@ body {
 .font-mid {
   font-size: 1.5rem;
 }
+
+/* side nav */
+.side-nav {
+  display: block;
+  z-index: 3;
+  width: 300px;
+}
+.hide-nav {
+  transform: translateX(0)
+}
+.close-tag{
+  display: none;
+}
+
+@media screen and (max-width: 768px){
+  .side-nav{
+    position: absolute;
+    min-height: 100%;
+  }
+
+  .hide-nav{
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-300px)
+  }
+
+  .close-tag{
+    display: inline-block;
+  }
+}
