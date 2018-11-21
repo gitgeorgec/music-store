@@ -28,16 +28,16 @@ self.__precacheManifest = [
     "url": "/music-store/static/js/main.7b7cee15.chunk.js"
   },
   {
+    "revision": "eb34bc6df41610807fe844ddedddb7e3",
+    "url": "/music-store/static/media/laura-marques-647991-unsplash.eb34bc6d.jpg"
+  },
+  {
     "revision": "4e44590340d7ea518928b1be5d0b485c",
     "url": "/music-store/static/media/rawpixel-649905-unsplash.4e445903.jpg"
   },
   {
     "revision": "4dc62de75df1b484923c72d47aa8c4d2",
     "url": "/music-store/static/media/marten-newhall-226045-unsplash.4dc62de7.jpg"
-  },
-  {
-    "revision": "eb34bc6df41610807fe844ddedddb7e3",
-    "url": "/music-store/static/media/laura-marques-647991-unsplash.eb34bc6d.jpg"
   },
   {
     "revision": "aab4905da9e66af54e45077526289668",
