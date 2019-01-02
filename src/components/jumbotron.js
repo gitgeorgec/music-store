@@ -11,9 +11,9 @@ class Jumbotron extends Component{
         return (
             <div className="jumbotron jumbo_back">
                 <h1 className="display-4" style={this.white}>Music Store</h1>
-                <p className="lead" style={this.white}>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <p className="lead" style={this.white}>Enjoy your music.</p>
                 <hr className="my-4"/>
-                <p style={this.white}>It uses utility classNamees for typography and spacing to space content out within the larger container.</p>
+                <p style={this.white}>This is a practice project. There is no real product in this project</p>
             </div>
         )
     }
