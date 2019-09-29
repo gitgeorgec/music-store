@@ -12,7 +12,7 @@ function errorHandle(res){
 }
 
 export async function getToken(){
-    const tokenURL = 'https://secret-plateau-59047.herokuapp.com/access_token'
+    const tokenURL = 'https://sheltered-hamlet-43788.herokuapp.com/access_token'
     return fetch(tokenURL)
     .then(res => {
         errorHandle(res)
@@ -43,14 +43,14 @@ export async function getData(searchURL,token){
 }
 
 export async function getAuth(sign,username,email,password){
-    const url = 'https://secret-plateau-59047.herokuapp.com/api/auth/'+sign
+    const url = 'https://sheltered-hamlet-43788.herokuapp.com/api/auth/'+sign
     return fetch(url,{
         method:"POST",
         headers: {
             'Content-Type': 'application/json'
           },
         body: JSON.stringify({
-        username, 
+        username,
         email,
         password
         })
@@ -67,7 +67,7 @@ export async function getAuth(sign,username,email,password){
 }
 
 export async function checkAuth(userId, token){
-    const url="https://secret-plateau-59047.herokuapp.com/test/" +userId
+    const url="https://sheltered-hamlet-43788.herokuapp.com/test/" +userId
     return fetch(url,{
         headers:{
             "authorization":`Bearer ${token}`
@@ -85,7 +85,7 @@ export async function checkAuth(userId, token){
 }
 
 export async function getUser(){
-    return fetch("https://secret-plateau-59047.herokuapp.com/api/user/"+localStorage.id,{
+    return fetch("https://sheltered-hamlet-43788.herokuapp.com/api/user/"+localStorage.id,{
       headers: {
           "Content-Type": "text/plain",
           "authorization":`Bearer ${localStorage.jwtToken}`
@@ -96,7 +96,7 @@ export async function getUser(){
   }
 
 export async function makeOrder(token,order){
-    return fetch("https://secret-plateau-59047.herokuapp.com/api/charge/"+localStorage.id, {
+    return fetch("https://sheltered-hamlet-43788.herokuapp.com/api/charge/"+localStorage.id, {
       method: "POST",
       headers: {
           "Content-Type": "text/plain",
