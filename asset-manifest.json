@@ -1,17 +1,17 @@
 {
   "main.css": "/music-store/static/css/main.f0b5078e.chunk.css",
-  "main.js": "/music-store/static/js/main.021b6f75.chunk.js",
-  "main.js.map": "/music-store/static/js/main.021b6f75.chunk.js.map",
+  "main.js": "/music-store/static/js/main.f9647fa3.chunk.js",
+  "main.js.map": "/music-store/static/js/main.f9647fa3.chunk.js.map",
   "static/js/1.417938fd.chunk.js": "/music-store/static/js/1.417938fd.chunk.js",
   "static/js/1.417938fd.chunk.js.map": "/music-store/static/js/1.417938fd.chunk.js.map",
   "runtime~main.js": "/music-store/static/js/runtime~main.8488dd54.js",
   "runtime~main.js.map": "/music-store/static/js/runtime~main.8488dd54.js.map",
   "static/media/malte-wingen-381988-unsplash.jpg": "/music-store/static/media/malte-wingen-381988-unsplash.331197b5.jpg",
   "static/media/Stripe logo - blue.png": "/music-store/static/media/Stripe logo - blue.fb4644a0.png",
-  "static/media/index.css": "/music-store/static/media/anthony-delanoix-15928-unsplash2.a21982e6.jpg",
+  "static/media/index.css": "/music-store/static/media/jamie-street-804224-unsplash.aab4905d.jpg",
   "static/media/Spotify_Logo_RGB_Green.png": "/music-store/static/media/Spotify_Logo_RGB_Green.11dc437a.png",
   "static/css/main.f0b5078e.chunk.css.map": "/music-store/static/css/main.f0b5078e.chunk.css.map",
   "index.html": "/music-store/index.html",
-  "precache-manifest.93de83f2744fa3651a8e103bb00dc8de.js": "/music-store/precache-manifest.93de83f2744fa3651a8e103bb00dc8de.js",
+  "precache-manifest.215f6cb8b6b8a25ca595cc83b06deb19.js": "/music-store/precache-manifest.215f6cb8b6b8a25ca595cc83b06deb19.js",
   "service-worker.js": "/music-store/service-worker.js"
 }

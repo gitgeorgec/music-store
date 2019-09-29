@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/music-store/static/media/Stripe logo - blue.fb4644a0.png"
   },
   {
-    "revision": "021b6f7526e49c0535bd",
+    "revision": "f9647fa3a39dc6f225eb",
     "url": "/music-store/static/css/main.f0b5078e.chunk.css"
   },
   {
@@ -24,8 +24,12 @@ self.__precacheManifest = [
     "url": "/music-store/static/media/Spotify_Logo_RGB_Green.11dc437a.png"
   },
   {
-    "revision": "021b6f7526e49c0535bd",
-    "url": "/music-store/static/js/main.021b6f75.chunk.js"
+    "revision": "f9647fa3a39dc6f225eb",
+    "url": "/music-store/static/js/main.f9647fa3.chunk.js"
+  },
+  {
+    "revision": "4e44590340d7ea518928b1be5d0b485c",
+    "url": "/music-store/static/media/rawpixel-649905-unsplash.4e445903.jpg"
   },
   {
     "revision": "eb34bc6df41610807fe844ddedddb7e3",
@@ -36,19 +40,15 @@ self.__precacheManifest = [
     "url": "/music-store/static/media/marten-newhall-226045-unsplash.4dc62de7.jpg"
   },
   {
-    "revision": "4e44590340d7ea518928b1be5d0b485c",
-    "url": "/music-store/static/media/rawpixel-649905-unsplash.4e445903.jpg"
+    "revision": "a21982e69337c026fe4ac4fad2821e3e",
+    "url": "/music-store/static/media/anthony-delanoix-15928-unsplash2.a21982e6.jpg"
   },
   {
     "revision": "aab4905da9e66af54e45077526289668",
     "url": "/music-store/static/media/jamie-street-804224-unsplash.aab4905d.jpg"
   },
   {
-    "revision": "a21982e69337c026fe4ac4fad2821e3e",
-    "url": "/music-store/static/media/anthony-delanoix-15928-unsplash2.a21982e6.jpg"
-  },
-  {
-    "revision": "67b1444542ad198f4d15998e73ce70f2",
+    "revision": "8d69c45fdf99fd07f42b38c947a93849",
     "url": "/music-store/index.html"
   }
 ];
